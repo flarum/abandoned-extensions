@@ -4,23 +4,12 @@ on:
   pull_request:
     paths:
       - abandoned.json
-  push:
-    branches-ignore:
-      - main
-    paths:
-      - abandoned.json
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate JSON syntax
         run: |
@@ -30,8 +19,7 @@ jobs:
           fi
           echo "JSON syntax is valid."
 
-      - name: Auto-fix formatting and structure
-        id: autofix
+      - name: Check formatting and structure
         run: |
           python3 - <<'EOF'
           import json, sys
@@ -40,6 +28,11 @@ jobs:
               data = json.load(f)
 
           errors = []
+          keys = list(data.keys())
+          sorted_keys = sorted(keys)
+
+          if keys != sorted_keys:
+              errors.append(f"Keys are not sorted alphabetically. Expected order:\n  " + "\n  ".join(sorted_keys))
 
           for key, value in data.items():
               if "/" not in key:
@@ -58,29 +51,8 @@ jobs:
                   print(f"::error file=abandoned.json::{error}")
               sys.exit(1)
 
-          # Sort keys alphabetically and rewrite
-          sorted_data = dict(sorted(data.items()))
-          with open("abandoned.json", "w") as f:
-              json.dump(sorted_data, f, indent=2)
-              f.write("\n")
-
-          if list(data.keys()) != list(sorted_data.keys()):
-              print("Keys were not sorted alphabetically — fixed.")
-          else:
-              print("Formatting and structure look good.")
+          print("Formatting and structure look good.")
           EOF
-
-      - name: Commit fixes if needed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet abandoned.json; then
-            git add abandoned.json
-            git commit -m "chore: auto-sort abandoned.json"
-            git push
-          else
-            echo "No changes needed."
-          fi
 
       - name: Check packages exist on Packagist (warning only)
         run: |
