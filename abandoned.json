@@ -10,5 +10,8 @@
   },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
+  },
+  "askvortsov/flarum-discussion-templates": {
+    "replacement": "fof/discussion-templates"
   }
 }
