@@ -4,6 +4,11 @@ on:
   pull_request:
     paths:
       - abandoned.json
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - abandoned.json
 
 jobs:
   validate:
