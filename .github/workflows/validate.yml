@@ -8,53 +8,74 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate JSON syntax
         run: |
           if ! python3 -m json.tool abandoned.json > /dev/null; then
-            echo "::error file=abandoned.json::abandoned.json contains invalid JSON"
+            echo "::error file=abandoned.json::abandoned.json contains invalid JSON — please fix manually."
             exit 1
           fi
           echo "JSON syntax is valid."
 
-      - name: Check key formatting and sorting
+      - name: Auto-fix formatting and structure
+        id: autofix
         run: |
           python3 - <<'EOF'
           import json, sys
 
           with open("abandoned.json") as f:
-              raw = f.read()
-
-          data = json.loads(raw)
-          keys = list(data.keys())
-          sorted_keys = sorted(keys)
+              data = json.load(f)
 
           errors = []
-
-          if keys != sorted_keys:
-              errors.append(f"Keys are not sorted alphabetically. Expected order:\n  " + "\n  ".join(sorted_keys))
 
           for key, value in data.items():
               if "/" not in key:
                   errors.append(f"Key '{key}' does not look like a composer package name (expected vendor/package).")
               if not isinstance(value, dict):
-                  errors.append(f"Value for '{key}' must be an object.")
-              elif "replacement" in value and not isinstance(value["replacement"], str):
-                  errors.append(f"'replacement' for '{key}' must be a string.")
-              for extra_key in value:
-                  if extra_key != "replacement":
-                      errors.append(f"Unknown field '{extra_key}' in entry for '{key}'. Only 'replacement' is allowed.")
+                  errors.append(f"Value for '{key}' must be an object, got: {type(value).__name__}.")
+              else:
+                  if "replacement" in value and not isinstance(value["replacement"], str):
+                      errors.append(f"'replacement' for '{key}' must be a string.")
+                  for extra_key in value:
+                      if extra_key != "replacement":
+                          errors.append(f"Unknown field '{extra_key}' in entry for '{key}'. Only 'replacement' is allowed.")
 
           if errors:
               for error in errors:
                   print(f"::error file=abandoned.json::{error}")
               sys.exit(1)
 
-          print("Formatting and structure look good.")
+          # Sort keys alphabetically and rewrite
+          sorted_data = dict(sorted(data.items()))
+          with open("abandoned.json", "w") as f:
+              json.dump(sorted_data, f, indent=2)
+              f.write("\n")
+
+          if list(data.keys()) != list(sorted_data.keys()):
+              print("Keys were not sorted alphabetically — fixed.")
+          else:
+              print("Formatting and structure look good.")
           EOF
+
+      - name: Commit fixes if needed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet abandoned.json; then
+            git add abandoned.json
+            git commit -m "chore: auto-sort abandoned.json"
+            git push
+          else
+            echo "No changes needed."
+          fi
 
       - name: Check packages exist on Packagist (warning only)
         run: |
