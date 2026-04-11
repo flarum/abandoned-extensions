@@ -1,4 +1,7 @@
 {
+  "afrux/online-users-widget": {
+    "replacement": "fof/online-users-widget"
+  },
   "askvortsov/flarum-checklist": {
     "replacement": "fof/checklist"
   },
