@@ -1,0 +1,88 @@
+name: Validate
+
+on:
+  pull_request:
+    paths:
+      - abandoned.json
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON syntax
+        run: |
+          if ! python3 -m json.tool abandoned.json > /dev/null; then
+            echo "::error file=abandoned.json::abandoned.json contains invalid JSON"
+            exit 1
+          fi
+          echo "JSON syntax is valid."
+
+      - name: Check key formatting and sorting
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+
+          with open("abandoned.json") as f:
+              raw = f.read()
+
+          data = json.loads(raw)
+          keys = list(data.keys())
+          sorted_keys = sorted(keys)
+
+          errors = []
+
+          if keys != sorted_keys:
+              errors.append(f"Keys are not sorted alphabetically. Expected order:\n  " + "\n  ".join(sorted_keys))
+
+          for key, value in data.items():
+              if "/" not in key:
+                  errors.append(f"Key '{key}' does not look like a composer package name (expected vendor/package).")
+              if not isinstance(value, dict):
+                  errors.append(f"Value for '{key}' must be an object.")
+              elif "replacement" in value and not isinstance(value["replacement"], str):
+                  errors.append(f"'replacement' for '{key}' must be a string.")
+              for extra_key in value:
+                  if extra_key != "replacement":
+                      errors.append(f"Unknown field '{extra_key}' in entry for '{key}'. Only 'replacement' is allowed.")
+
+          if errors:
+              for error in errors:
+                  print(f"::error file=abandoned.json::{error}")
+              sys.exit(1)
+
+          print("Formatting and structure look good.")
+          EOF
+
+      - name: Check packages exist on Packagist (warning only)
+        run: |
+          python3 - <<'EOF'
+          import json, urllib.request, urllib.error
+
+          with open("abandoned.json") as f:
+              data = json.load(f)
+
+          warnings = []
+
+          for package in data.keys():
+              url = f"https://packagist.org/packages/{package}.json"
+              try:
+                  urllib.request.urlopen(url, timeout=10)
+              except urllib.error.HTTPError as e:
+                  if e.code == 404:
+                      warnings.append(f"Package '{package}' was not found on Packagist. If this is a private package, this warning can be ignored.")
+                  else:
+                      warnings.append(f"Could not check '{package}' on Packagist (HTTP {e.code}).")
+              except Exception as e:
+                  warnings.append(f"Could not check '{package}' on Packagist: {e}")
+
+          for warning in warnings:
+              print(f"::warning file=abandoned.json::{warning}")
+
+          if warnings:
+              print("\nSome packages could not be verified on Packagist — please review manually.")
+          else:
+              print("All packages found on Packagist.")
+          EOF
