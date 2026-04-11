@@ -1,11 +1,11 @@
 {
+  "askvortsov/flarum-checklist": {
+    "replacement": "fof/checklist"
+  },
   "blomstra/usercard-stats": {
     "replacement": "fof/usercard-stats"
   },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
-  },
-  "askvortsov/flarum-checklist": {
-    "replacement": "fof/checklist"
   }
 }
