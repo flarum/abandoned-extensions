@@ -2,6 +2,9 @@
   "askvortsov/flarum-checklist": {
     "replacement": "fof/checklist"
   },
+  "askvortsov/flarum-rich-text": {
+    "replacement": "fof/rich-text"
+  },
   "blomstra/usercard-stats": {
     "replacement": "fof/usercard-stats"
   },
