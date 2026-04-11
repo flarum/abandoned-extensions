@@ -1,4 +1,7 @@
 {
+  "askvortsov/flarum-checklist": {
+    "replacement": "fof/checklist"
+  },
   "blomstra/usercard-stats": {
     "replacement": "fof/usercard-stats"
   },
