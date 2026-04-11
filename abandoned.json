@@ -4,5 +4,8 @@
   },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
-  }
+  },
+  "askvortsov/flarum-checklist": {
+    "replacement": "fof/checklist"
+  },
 }
