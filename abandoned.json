@@ -1,6 +1,18 @@
 {
+  "afrux/forum-stats-widget": {
+    "replacement": "fof/forum-stats-widget"
+  },
+  "afrux/forum-widgets-core": {
+    "replacement": "fof/forum-widgets-core"
+  },
+  "afrux/news-widget": {
+    "replacement": "fof/news-widget"
+  },
   "afrux/online-users-widget": {
     "replacement": "fof/online-users-widget"
+  },
+  "afrux/top-posters-widget": {
+    "replacement": "fof/top-posters-widget"
   },
   "askvortsov/flarum-checklist": {
     "replacement": "fof/checklist"
