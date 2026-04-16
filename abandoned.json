@@ -28,5 +28,18 @@
   },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
+  },
+
+  "capybash/magicbb": {
+    "replacement": "forumaker/magicbb"
+  },
+  "capybash/magicslider": {
+    "replacement": "forumaker/magicslider"
+  },
+  "capybash/magicread": {
+    "replacement": "forumaker/magicread"
+  },
+  "capybash/magicdice": {
+    "replacement": "forumaker/magicdice"
   }
 }
