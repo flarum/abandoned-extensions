@@ -41,5 +41,8 @@
   },
   "capybash/magicdice": {
     "replacement": "forumaker/magicdice"
+  },
+  "katosdev/signature": {
+    "replacement": "fof/signature"
   }
 }
