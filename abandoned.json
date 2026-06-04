@@ -43,5 +43,8 @@
   },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
+  },
+  "v17development/flarum-seo": {
+    "replacement": "fof/seo"
   }
 }
