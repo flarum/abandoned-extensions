@@ -41,6 +41,9 @@
   "capybash/magicslider": {
     "replacement": "forumaker/magicslider"
   },
+  "clarkwinkelmann/flarum-ext-author-change": {
+    "replacement": "fof/author-change"
+  },
   "katosdev/signature": {
     "replacement": "fof/signature"
   },
