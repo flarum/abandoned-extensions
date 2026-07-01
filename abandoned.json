@@ -23,11 +23,11 @@
   "askvortsov/flarum-rich-text": {
     "replacement": "fof/rich-text"
   },
-  "blomstra/usercard-stats": {
-    "replacement": "fof/usercard-stats"
-  },
   "blomstra/spam-prevention": {
     "replacement": "fof/anti-spam"
+  },
+  "blomstra/usercard-stats": {
+    "replacement": "fof/usercard-stats"
   },
   "capybash/magicbb": {
     "replacement": "forumaker/magicbb"
@@ -40,6 +40,9 @@
   },
   "capybash/magicslider": {
     "replacement": "forumaker/magicslider"
+  },
+  "clarkwinkelmann/flarum-ext-author-change": {
+    "replacement": "fof/author-change"
   },
   "katosdev/signature": {
     "replacement": "fof/signature"
