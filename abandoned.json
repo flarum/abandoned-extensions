@@ -26,6 +26,9 @@
   "blomstra/usercard-stats": {
     "replacement": "fof/usercard-stats"
   },
+  "blomstra/spam-prevention": {
+    "replacement": "fof/anti-spam"
+  },
   "capybash/magicbb": {
     "replacement": "forumaker/magicbb"
   },
