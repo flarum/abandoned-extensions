@@ -44,8 +44,17 @@
   "clarkwinkelmann/flarum-ext-author-change": {
     "replacement": "fof/author-change"
   },
+  "clarkwinkelmann/flarum-ext-bookmarks": {
+    "replacement": "fof/bookmarks"
+  },
+  "clarkwinkelmann/flarum-ext-discussion-bookmarks": {
+    "replacement": "fof/bookmarks"
+  },
   "clarkwinkelmann/flarum-ext-follow-tags-prompt": {
     "replacement": "fof/follow-tags"
+  },
+  "clarkwinkelmann/flarum-ext-post-bookmarks": {
+    "replacement": "fof/bookmarks"
   },
   "katosdev/signature": {
     "replacement": "fof/signature"
