@@ -41,6 +41,9 @@
   "capybash/magicslider": {
     "replacement": "forumaker/magicslider"
   },
+  "clarkwinkelmann/flarum-ext-first-post-approval": {
+    "replacement": "fof/first-post-approval"
+  },
   "clarkwinkelmann/flarum-ext-author-change": {
     "replacement": "fof/author-change"
   },
