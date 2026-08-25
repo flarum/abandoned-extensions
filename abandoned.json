@@ -68,6 +68,9 @@
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
   },
+  "sycho/flarum-photoswipe": {
+    "replacement": "fof/photoswipe"
+  },
   "v17development/flarum-blog": {
     "replacement": "fof/blog"
   },
