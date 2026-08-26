@@ -65,6 +65,9 @@
   "katosdev/signature": {
     "replacement": "fof/signature"
   },
+  "nodeloc/flarum-ext-my-emoji": {
+    "replacement": "pianotell/flarum-ext-flamoji"
+  },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
   },
