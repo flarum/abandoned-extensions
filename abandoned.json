@@ -56,6 +56,9 @@
   "clarkwinkelmann/flarum-ext-follow-tags-prompt": {
     "replacement": "fof/follow-tags"
   },
+  "clarkwinkelmann/flarum-ext-emojionearea": {
+    "replacement": "pianotell/flarum-ext-flamoji"
+  },
   "clarkwinkelmann/flarum-ext-post-bookmarks": {
     "replacement": "fof/bookmarks"
   },
@@ -64,6 +67,9 @@
   },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
+  },
+  "the-turk/flarum-flamoji": {
+    "replacement": "pianotell/flarum-ext-flamoji"
   },
   "v17development/flarum-blog": {
     "replacement": "fof/blog"
