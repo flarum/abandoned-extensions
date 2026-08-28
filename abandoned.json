@@ -65,6 +65,9 @@
   "ffans/clipboardjs": {
     "replacement": "linkrobins/clipboard"
   },
+  "justoverclock/custom-html-widget": {
+    "replacement": "linkrobins/html-widget"
+  },
   "katosdev/signature": {
     "replacement": "fof/signature"
   },
