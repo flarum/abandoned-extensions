@@ -59,6 +59,12 @@
   "clarkwinkelmann/flarum-ext-post-bookmarks": {
     "replacement": "fof/bookmarks"
   },
+  "dem13n/topic-starter-label": {
+    "replacement": "linkrobins/op"
+  },
+  "ffans/clipboardjs": {
+    "replacement": "linkrobins/clipboard"
+  },
   "katosdev/signature": {
     "replacement": "fof/signature"
   },
@@ -70,5 +76,8 @@
   },
   "v17development/flarum-seo": {
     "replacement": "fof/seo"
+  },
+  "ziiven/flarum-post-number": {
+    "replacement": "linkrobins/post-num"
   }
 }
