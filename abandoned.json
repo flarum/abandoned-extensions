@@ -14,11 +14,17 @@
   "afrux/top-posters-widget": {
     "replacement": "fof/top-posters-widget"
   },
+  "askvortsov/flarum-categories": {
+    "replacement": "fof/categories"
+  },
   "askvortsov/flarum-checklist": {
     "replacement": "fof/checklist"
   },
   "askvortsov/flarum-discussion-templates": {
     "replacement": "fof/discussion-templates"
+  },
+  "askvortsov/flarum-moderator-warnings": {
+    "replacement": "fof/moderator-warnings"
   },
   "askvortsov/flarum-pwa": {
     "replacement": "fof/pwa"
