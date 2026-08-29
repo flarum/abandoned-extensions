@@ -65,14 +65,23 @@
   "clarkwinkelmann/flarum-ext-follow-tags-prompt": {
     "replacement": "fof/follow-tags"
   },
+  "clarkwinkelmann/flarum-ext-emojionearea": {
+    "replacement": "pianotell/flarum-ext-flamoji"
+  },
   "clarkwinkelmann/flarum-ext-post-bookmarks": {
     "replacement": "fof/bookmarks"
   },
   "katosdev/signature": {
     "replacement": "fof/signature"
   },
+  "nodeloc/flarum-ext-my-emoji": {
+    "replacement": "pianotell/flarum-ext-flamoji"
+  },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
+  },
+  "the-turk/flarum-flamoji": {
+    "replacement": "pianotell/flarum-ext-flamoji"
   },
   "sycho/flarum-photoswipe": {
     "replacement": "fof/photoswipe"
