@@ -20,6 +20,9 @@
   "askvortsov/flarum-discussion-templates": {
     "replacement": "fof/discussion-templates"
   },
+  "askvortsov/flarum-pwa": {
+    "replacement": "fof/pwa"
+  },
   "askvortsov/flarum-rich-text": {
     "replacement": "fof/rich-text"
   },
@@ -64,6 +67,9 @@
   },
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
+  },
+  "sycho/flarum-photoswipe": {
+    "replacement": "fof/photoswipe"
   },
   "v17development/flarum-blog": {
     "replacement": "fof/blog"
