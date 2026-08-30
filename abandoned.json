@@ -89,6 +89,9 @@
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
   },
+  "sycho/flarum-profile-cover": {
+    "replacement": "forumaker/profile-cover"
+  },
   "the-turk/flarum-flamoji": {
     "replacement": "pianotell/flarum-ext-flamoji"
   },
