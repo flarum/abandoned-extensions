@@ -62,14 +62,14 @@
   "clarkwinkelmann/flarum-ext-discussion-bookmarks": {
     "replacement": "fof/bookmarks"
   },
+  "clarkwinkelmann/flarum-ext-emojionearea": {
+    "replacement": "pianotell/flarum-ext-flamoji"
+  },
   "clarkwinkelmann/flarum-ext-first-post-approval": {
     "replacement": "fof/first-post-approval"
   },
   "clarkwinkelmann/flarum-ext-follow-tags-prompt": {
     "replacement": "fof/follow-tags"
-  },
-  "clarkwinkelmann/flarum-ext-emojionearea": {
-    "replacement": "pianotell/flarum-ext-flamoji"
   },
   "clarkwinkelmann/flarum-ext-post-bookmarks": {
     "replacement": "fof/bookmarks"
@@ -98,14 +98,14 @@
   "sycho/flarum-move-posts": {
     "replacement": "fof/move-posts"
   },
+  "sycho/flarum-photoswipe": {
+    "replacement": "fof/photoswipe"
+  },
   "sycho/flarum-profile-cover": {
     "replacement": "forumaker/profile-cover"
   },
   "the-turk/flarum-flamoji": {
     "replacement": "pianotell/flarum-ext-flamoji"
-  },
-  "sycho/flarum-photoswipe": {
-    "replacement": "fof/photoswipe"
   },
   "v17development/flarum-blog": {
     "replacement": "fof/blog"
