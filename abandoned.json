@@ -32,6 +32,9 @@
   "askvortsov/flarum-rich-text": {
     "replacement": "fof/rich-text"
   },
+  "blomstra/mark-unread": {
+    "replacement": "fof/mark-unread"
+  },
   "blomstra/spam-prevention": {
     "replacement": "fof/anti-spam"
   },
