@@ -77,6 +77,9 @@
   "clarkwinkelmann/flarum-ext-post-stream-search": {
     "replacement": "ekumanov/flarum-ext-post-search"
   },
+  "davwheat/ad-units": {
+    "replacement": "floxum/ad-units"
+  },
   "dem13n/topic-starter-label": {
     "replacement": "linkrobins/op"
   },
