@@ -26,5 +26,6 @@ Please ensure:
 - The extension is genuinely abandoned — no activity, no response to issues, or explicitly marked as such by the author
 - If a replacement exists, it provides equivalent or better functionality
 - The relevant discussion on `discuss.flarum.org` is also tagged `Abandoned`
+- `abandoned.json` stays sorted alphabetically with 2-space indentation: run `python3 scripts/validate.py --fix` before committing
 
 **This list is not for forks.** If an extension's original author has abandoned it but a community fork is actively maintained, the original package should not be listed here — users should be pointed to the fork via the `replacement` field only if the fork has taken over the original's role. Do not list an extension simply because a fork exists.
